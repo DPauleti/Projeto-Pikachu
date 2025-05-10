@@ -8,7 +8,7 @@ export default function Type({params}) {
     const { name } = React.use(params);
     const handleClick = (heroType) => (event) => {
         event.preventDefault();
-        router.push(`/pages/customize/${heroType}/${encodeURIComponent(name)}`);
+        router.push(`/customize/${heroType}/${encodeURIComponent(name)}`);
     }
 
     return (    
