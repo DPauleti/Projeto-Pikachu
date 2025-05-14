@@ -1,6 +1,7 @@
 'use client';
 import { useRouter } from "next/navigation";
 import React from "react";
+import HeroTypeCard from "@/components/HeroTypeCard";
 
 
 export default function Type({params}) {
@@ -13,13 +14,17 @@ export default function Type({params}) {
 
     return (    
         <main>
-            <h1>HERO</h1>
-            <h2>{name}</h2>
-            <form>
-                <button onClick={handleClick("Strategist")}>Strategist</button>
-                <button onClick={handleClick("Guardian")}>Guardian</button>
-                <button onClick={handleClick("Speedster")}>Speedster</button>
-            </form>
+            <h2>{name} will be a...</h2>
+            <section>
+                <HeroTypeCard></HeroTypeCard>
+                {/* <HeroTypeDetails><button onClick={handleClick("Strategist")}>Strategist</button></HeroTypeDetails> */}
+
+                {/* <HeroTypeCard></HeroTypeCard>
+                <HeroTypeDetails><button onClick={handleClick("Guardian")}>Guardian</button></HeroTypeDetails>
+
+                <HeroTypeCard></HeroTypeCard>
+                <HeroTypeDetails><button onClick={handleClick("Speedster")}>Speedster</button></HeroTypeDetails> */}
+            </section>
         </main>
     )
 }
