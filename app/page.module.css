@@ -1,16 +1,15 @@
-.page {
+.home {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #0B1117;
 }
 
 .box {
+  background-color: #05070A;
   width: 30%;
   height: 30%;
-  background-color: #05070A;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -20,9 +19,8 @@
   gap: 20px;
 }
 
-.text {
+.homeTitle {
   font-family: "Press Start 2P";
-  color: #ffffff;
   font-size: 0.8rem;
   font-weight: 400;
 }

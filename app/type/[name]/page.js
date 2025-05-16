@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 import HeroTypeCard from "@/components/HeroTypeCard";
+import styles from './page.module.css'
 
 
 export default function Type({params}) {
@@ -14,16 +15,13 @@ export default function Type({params}) {
 
     return (    
         <main>
-            <h2>{name} will be a...</h2>
-            <section>
+            <header className={`${styles.typeHeader}`}>
+                <h2>{name} will be a...</h2>
+            </header>
+            <section className={`${styles.typeSection}`}>
                 <HeroTypeCard></HeroTypeCard>
-                {/* <HeroTypeDetails><button onClick={handleClick("Strategist")}>Strategist</button></HeroTypeDetails> */}
-
-                {/* <HeroTypeCard></HeroTypeCard>
-                <HeroTypeDetails><button onClick={handleClick("Guardian")}>Guardian</button></HeroTypeDetails>
-
                 <HeroTypeCard></HeroTypeCard>
-                <HeroTypeDetails><button onClick={handleClick("Speedster")}>Speedster</button></HeroTypeDetails> */}
+                <HeroTypeCard></HeroTypeCard>
             </section>
         </main>
     )

@@ -14,9 +14,9 @@ export default function Home(){
     }
 
     return (
-        <main className={`${styles.page}`}>
+        <main className={`${styles.home}`}>
             <section className={`${styles.box}`}>
-                <h1 className={`${styles.text}`}>WHAT IS YOUR HERO NAME?</h1>
+                <h1 className={`${styles.homeTitle}`}>WHAT IS YOUR HERO NAME?</h1>
                 <form className={`${styles.form}`} onSubmit={handleSubmit}>
                     <input type="text" name="name" placeholder="Name" required />
                     <button type="submit">NEXT</button>

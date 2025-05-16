@@ -1,14 +1,15 @@
 import Image from 'next/image';
+import styles from './HeroTypeCard.module.css'
 
 export default function HeroTypeCard() {
   return (
-    <>
-        <Image
-          src="/raio.png"
+    <section className={`${styles.heroTypeCard}`}>
+        {/* <Image
+          src="/thunder.svg"
           alt='Speedster logo'
-          width={511.5}
-          height={511.5}
-        />
-    </>
+          width={400}
+          height={400}
+        /> */}
+    </section>
   );
 }
