@@ -19,7 +19,7 @@ export default function Type({params}) {
                 <h2>{name} will be a...</h2>
             </header>
             <section className={`${styles.typeSection}`}>
-                <HeroTypeCard></HeroTypeCard>
+                <HeroTypeCard name="Speedster"></HeroTypeCard>
                 <HeroTypeCard></HeroTypeCard>
                 <HeroTypeCard></HeroTypeCard>
             </section>
