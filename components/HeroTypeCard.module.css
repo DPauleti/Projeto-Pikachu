@@ -1,6 +1,52 @@
 .heroTypeCard {
-  height: 70vh;
-  width: 25vw;
+  position: relative;
+  height: 75vh;
+  width: auto;
   border: 3px solid #6E7C87;
   border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+
+.typeImage, .typeDetails {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+  transition-delay: 0.5s;
+}
+
+.typeImage {
+  object-fit: cover;
+  z-index: 1;
+}
+
+.typeDetails {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 2;
+}
+
+.heroTypeCard:hover .typeImage,
+.heroTypeCard:hover .typeDetails {
+  transition-delay: 0s;
+}
+
+.heroTypeCard:hover .typeImage {
+  opacity: 0;
+}
+
+.heroTypeCard:hover .typeDetails {
+  opacity: 1;
 }

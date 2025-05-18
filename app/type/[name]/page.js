@@ -19,9 +19,9 @@ export default function Type({params}) {
                 <h2>{name} will be a...</h2>
             </header>
             <section className={`${styles.typeSection}`}>
-                <HeroTypeCard name="Speedster"></HeroTypeCard>
-                <HeroTypeCard></HeroTypeCard>
-                <HeroTypeCard></HeroTypeCard>
+                <HeroTypeCard name="Speedster" image="/raio.png" onClick={handleClick("speedster")}></HeroTypeCard>
+                <HeroTypeCard name="Guardian" image="/shield.png" onClick={handleClick("guardian")}></HeroTypeCard>
+                <HeroTypeCard name="Strategist" image="/strategist.png" onClick={handleClick("strategist")}></HeroTypeCard>
             </section>
         </main>
     )
