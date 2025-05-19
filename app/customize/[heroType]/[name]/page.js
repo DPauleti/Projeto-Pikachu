@@ -1,8 +1,14 @@
 'use client';
+import HeroTypeCard from "@/components/HeroTypeCard";
 import StatPage from "@/components/StatPage";
 
 export default function Customize({params}) {
     const { name, heroType } = params;
+
+    const speedsterImage = '/raio.png'
+    const guardianImage = '/shield.png'
+    const strategistImage = '/strategist.png'
+
     const speedsterStats = {
         Intelligence: 50,
         Strength: 50,
@@ -27,12 +33,16 @@ export default function Customize({params}) {
         Power: 70,
         Combat: 30
     }
+
+    const heroSelected = heroType === "speedster" ? speedsterImage : heroType === "guardian" ? guardianImage : strategistImage;
+
     const initialStats = heroType === "speedster" ? speedsterStats : heroType === "guardian" ? guardianStats : strategistStats;
     const maxTotal = 350;
 
     return(
         <main>
             <p>Customize {name}</p>
+            <HeroTypeCard image={heroSelected} style={{}} />
             <StatPage initialStats={initialStats} maxTotal={maxTotal}></StatPage>
         </main>
     )

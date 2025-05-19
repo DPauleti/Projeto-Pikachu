@@ -12,32 +12,34 @@
   cursor: pointer;
 }
 
-.typeImage, .typeDetails {
+.heroFrame {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease, visibility 0.3s ease;
 }
 
-.typeImage {
+.imageFrame {
   object-fit: cover;
   z-index: 1;
+  visibility: visible;
 }
 
-.typeDetails {
-  font-family: Share Tech;
-  opacity: 0;
-  display: flex;
+.detailsFrame {
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  gap: 12px;
   box-sizing: border-box;
   text-align: center;
+  font-family: Share Tech;
+  opacity: 0;
+  display: flex;
   z-index: 2;
-  gap: 12px;
+  visibility: hidden;
 }
 
 .heroTypeCard:hover .typeImage,
@@ -45,20 +47,18 @@
   transition-delay: 0.25s;
 }
 
-.heroTypeCard:hover .typeImage {
+.heroTypeCard .typeImage {
   opacity: 0;
+  visibility: hidden;
 }
 
-.heroTypeCard:hover .typeDetails {
+.heroTypeCard .typeDetails {
   opacity: 1;
+  visibility: visible;
 }
 
-.typeDetails h1 {
+.detailsFrame h1 {
   font-size: 1.6rem;
   display: flex;
   flex-direction: column;
-}
-
-.typeDetails p {
-  
 }
