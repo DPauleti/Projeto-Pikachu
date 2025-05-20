@@ -3,13 +3,17 @@ import HeroTypeImage from './HeroTypeImage';
 import HeroTypeDetails from './HeroTypeDetails';
 
 
-export default function HeroTypeCard({ name, description, image, onClick }) {
+export default function HeroTypeCard({ name, description, image, onClick, enableHover = true }) {
   return (
-    <section className={`${styles.heroTypeCard}`} onClick={onClick}>
-      <section className={`${styles.heroFrame} ${styles.imageFrame}`}>
+    <section onClick={onClick}
+      className={
+        `${styles.heroTypeCard} ${enableHover ? styles.hoverEnabled : styles.noHover}`
+      }
+    >
+      <section className={`${styles.imageFrame}`}>
         <HeroTypeImage image={image} />
       </section>
-      <section className={`${styles.heroFrame} ${styles.detailsFrame}`}>
+      <section className={`${styles.detailsFrame}`}>
         <HeroTypeDetails name={name} description={description} />
       </section>
     </section>

@@ -42,7 +42,7 @@ export default function Customize({params}) {
     return(
         <main>
             <p>Customize {name}</p>
-            <HeroTypeCard image={heroSelected} style={{}} />
+            <HeroTypeCard image={heroSelected} enableHover={false} style={{}}  />
             <StatPage initialStats={initialStats} maxTotal={maxTotal}></StatPage>
         </main>
     )
