@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import StatBar from './StatBar';
+import styles from './CustomizeStats.module.css'
 
 const STEP = 10;
 const MAX_PER_STAT = 100;
 const MIN_PER_STAT = 0;
 
-export default function StatPage({ initialStats, maxTotal }) {
+export default function CustomizeStats({ initialStats, maxTotal }) {
   const [stats, setStats] = useState(initialStats);
   const total = Object.values(stats).reduce((sum, val) => sum + val, 0);
 
@@ -28,7 +29,7 @@ export default function StatPage({ initialStats, maxTotal }) {
   };
 
   return (
-    <div>
+    <section className={styles.customizeStatsContainer}>
       <h2>Total Used: {total} / {maxTotal}</h2>
       {Object.keys(stats).map(stat => (
         <StatBar
@@ -39,6 +40,6 @@ export default function StatPage({ initialStats, maxTotal }) {
           onDecrease={() => changeStat(stat, -STEP)}
         />
       ))}
-    </div>
+    </section>
   );
 }

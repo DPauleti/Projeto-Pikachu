@@ -1,9 +1,11 @@
 'use client';
+import { use } from 'react';
 import HeroTypeCard from "@/components/HeroTypeCard";
-import StatPage from "@/components/StatPage";
+import CustomizeStats from "@/components/CustomizeStats";
+import styles from "./page.module.css"
 
 export default function Customize({params}) {
-    const { name, heroType } = params;
+    const { name, heroType } = use(params);
 
     const speedsterImage = '/raio.png'
     const guardianImage = '/shield.png'
@@ -40,10 +42,14 @@ export default function Customize({params}) {
     const maxTotal = 350;
 
     return(
-        <main>
-            <p>Customize {name}</p>
-            <HeroTypeCard image={heroSelected} enableHover={false} style={{}}  />
-            <StatPage initialStats={initialStats} maxTotal={maxTotal}></StatPage>
+        <main className={`${styles.customizePage}`}>
+            <header className={`${styles.customizeHeader}`}>
+                <p>Customize {name}</p>
+            </header>
+            <section className={`${styles.customizeContent}`}>
+                <HeroTypeCard image={heroSelected} enableHover={false}  />
+                <CustomizeStats initialStats={initialStats} maxTotal={maxTotal}></CustomizeStats>
+            </section>
         </main>
     )
 }
