@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import StatBar from './StatBar';
 import styles from './CustomizeStats.module.css'
+import NextButton from './NextButton';
 
 const STEP = 10;
 const MAX_PER_STAT = 100;
@@ -40,6 +41,9 @@ export default function CustomizeStats({ initialStats, maxTotal }) {
           onDecrease={() => changeStat(stat, -STEP)}
         />
       ))}
+      <section className={styles.nextBtnCustomize}>
+        <NextButton />
+      </section>
     </section>
   );
 }

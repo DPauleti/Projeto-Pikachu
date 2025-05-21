@@ -44,13 +44,3 @@
 .form input:focus {
   outline: 1px solid #aaa;  
 }
-
-.form button {
-  font-family: "Press Start 2P"; 
-  font-size: 0.65rem;
-  height: 2.25rem;
-  width: 5rem;
-  background-color: #140B16;
-  color: #fff;
-  border: 1px solid #260659;
-}

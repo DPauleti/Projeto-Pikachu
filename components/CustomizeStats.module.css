@@ -4,3 +4,9 @@
   justify-content: center;
   width: 20vw;
 }
+
+.nextBtnCustomize {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}

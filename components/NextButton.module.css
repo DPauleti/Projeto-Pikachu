@@ -1,0 +1,9 @@
+.nextButton {
+  font-family: "Press Start 2P"; 
+  font-size: 0.6rem;
+  height: 2.2rem;
+  width: 4.5rem;
+  background-color: #140B16;
+  color: #fff;
+  border: 1px solid #260659;
+}

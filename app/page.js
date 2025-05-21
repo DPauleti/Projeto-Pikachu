@@ -2,6 +2,7 @@
 
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
+import NextButton from "@/components/NextButton";
 
 export default function Home(){
     const router = useRouter();
@@ -19,7 +20,7 @@ export default function Home(){
                 <h1 className={`${styles.homeTitle}`}>WHAT IS YOUR HERO NAME?</h1>
                 <form className={`${styles.form}`} onSubmit={handleSubmit}>
                     <input type="text" name="name" placeholder="Name" required />
-                    <button type="submit">NEXT</button>
+                    <NextButton />
                 </form>
             </section>
         </main>
