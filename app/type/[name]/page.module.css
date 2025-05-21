@@ -18,3 +18,19 @@
   align-items: center;
   gap: 20px;
 }
+
+@media (max-width: 768px) {
+
+  .typeHeader {
+    height: 16vh;
+    margin-bottom: 0;
+  }
+
+  .typeHeader h2 {
+    font-size: 1rem;
+  }
+
+  .typeSection {
+    gap: 8px;
+  }
+}

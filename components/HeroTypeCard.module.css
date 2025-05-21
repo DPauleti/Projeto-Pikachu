@@ -66,3 +66,18 @@
   word-spacing: 1px;
   letter-spacing: 0.5px;
 }
+
+@media (max-width: 768px) {
+  .imageFrame, .detailsFrame {
+    padding: 20px 12px;
+  }
+
+  .detailsFrame h1 {
+    font-size: 1.25rem;
+  }
+
+  .detailsFrame p {
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+  }
+}

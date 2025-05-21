@@ -44,3 +44,11 @@
 .form input:focus {
   outline: 1px solid #aaa;  
 }
+
+@media (max-width: 768px) {
+
+  .box {
+  background-color: #05070A;
+  width: 60%;
+  }
+}

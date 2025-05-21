@@ -25,3 +25,22 @@
   word-spacing: 1.5px;
   letter-spacing: 0.5px;
 }
+
+@media (max-width: 768px) {
+
+  .customizeHeader {
+    height: 16vh;
+    margin-bottom: 0;
+  }
+
+  .customizeHeader p {
+    font-family: "Press Start 2P";
+    font-size: 1rem;
+  }
+
+  .customizeContent {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+}
