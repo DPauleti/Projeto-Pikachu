@@ -52,3 +52,20 @@
   width: 60%;
   }
 }
+
+@media (max-width: 450px) {
+
+  .box {
+    background-color: #05070A;
+    width: 75%;
+  }
+
+  .homeTitle {
+    font-family: "Press Start 2P";
+    font-size: 0.65rem;
+  }
+
+  .form input {
+    width: 15rem;
+  }
+}
