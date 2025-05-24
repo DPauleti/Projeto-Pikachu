@@ -54,18 +54,15 @@
 }
 
 @media (max-width: 450px) {
-
   .box {
-    background-color: #05070A;
-    width: 75%;
+    width: 80%;
   }
 
   .homeTitle {
-    font-family: "Press Start 2P";
     font-size: 0.65rem;
   }
 
   .form input {
-    width: 15rem;
+    width: 16rem;
   }
 }
