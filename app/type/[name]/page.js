@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeroTypeCard from "@/components/HeroTypeCard";
 import styles from './page.module.css'
 
@@ -18,7 +18,7 @@ export default function Type({params}) {
     {
       key: 'speedster',
       name: 'Speedster',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      description: 'Fast and agile, masters of movement.',
       image: '/raio.png'
     },
     {
@@ -35,13 +35,45 @@ export default function Type({params}) {
     }
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const handleDotClick = (index) => () => setActiveIndex(index);
+
+  useEffect(() => {
+    const updateIsMobile = () => setIsMobile(window.innerWidth < 1250);
+    updateIsMobile();
+    window.addEventListener('resize', updateIsMobile);
+    return () => window.removeEventListener('resize', updateIsMobile);
+  }, []);
+
     return (    
         <main>
             <header className={`${styles.typeHeader}`}>
                 <h2>{name} will be a...</h2>
             </header>
             <section className={`${styles.typeSection}`}>
-              { heroTypes.map((hero) => (
+              {isMobile ? (
+                <>
+                  <HeroTypeCard 
+                    key={heroTypes[activeIndex].key}
+                    name={heroTypes[activeIndex].name}
+                    description={heroTypes[activeIndex].description}
+                    image={heroTypes[activeIndex].image}
+                    onClick={handleClick(heroTypes[activeIndex].onClick)}
+                  />
+                  <section className={styles.dotsContainer}>
+                    {heroTypes.map((_, i) => (
+                      <section
+                        key={i}
+                        onClick={handleDotClick(i)}
+                        className={`${styles.dot} ${i === activeIndex ? styles.activeDot : ''}`}
+                      />
+                      ))}
+                  </section>
+                </>
+              ) : (
+                heroTypes.map((hero) => (
                   <HeroTypeCard
                       key={hero.key}
                       name={hero.name}
@@ -49,8 +81,8 @@ export default function Type({params}) {
                       image={hero.image}
                       onClick={handleClick(hero.key)}
                   />
-                ))}
+                ))
+              )}          
             </section>
         </main>
-    )
-}
+    )}

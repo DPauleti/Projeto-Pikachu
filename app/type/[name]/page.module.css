@@ -19,6 +19,39 @@
   gap: 20px;
 }
 
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #E0E0E0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activeDot {
+  background-color: #6E7C87;
+}
+
+@media  (min-width: 1251px) {
+  .dotsContainer {
+    display: none;
+  }
+}
+
+@media  (max-width: 1250px) {
+
+  .typeSection {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 768px) {
 
   .typeHeader {
@@ -33,4 +66,5 @@
   .typeSection {
     gap: 8px;
   }
+
 }
