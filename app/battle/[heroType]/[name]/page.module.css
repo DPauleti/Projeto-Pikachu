@@ -1,0 +1,10 @@
+.battleContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.herosSpace {
+  display: flex;
+  flex-direction: column;
+}
