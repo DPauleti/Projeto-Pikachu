@@ -1,8 +1,10 @@
 'use client';
 import { use } from 'react';
-import HeroTypeCard from "@/components/HeroTypeCard";
+import HeroTypeCard from "@/components/HeroType/HeroTypeCard";
 import CustomizeStats from "@/components/CustomizeStats";
 import styles from "./page.module.css"
+import PagesHeader from '@/components/utils/PagesHeader';
+
 
 export default function Customize({params}) {
     const { name, heroType } = use(params);
@@ -43,9 +45,7 @@ export default function Customize({params}) {
 
     return(
         <main className={`${styles.customizePage}`}>
-            <header className={`${styles.customizeHeader}`}>
-                <p>Customize {name}</p>
-            </header>
+            <PagesHeader title={"Customize " + name} />
             <section className={`${styles.customizeContent}`}>
                 <HeroTypeCard image={heroSelected} enableHover={false}  />
                 <CustomizeStats initialStats={initialStats} maxTotal={maxTotal}></CustomizeStats>

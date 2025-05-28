@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import HeroTypeCard from "@/components/HeroTypeCard";
+import HeroTypeCard from "@/components/HeroType/HeroTypeCard";
 import styles from './page.module.css'
 
 
@@ -49,9 +49,7 @@ export default function Type({params}) {
 
     return (    
         <main>
-            <header className={`${styles.typeHeader}`}>
-                <h2>{name} will be a...</h2>
-            </header>
+            <PagesHeader title={name + "will be a..."}/>
             <section className={`${styles.typeSection}`}>
               {isMobile ? (
                 <>

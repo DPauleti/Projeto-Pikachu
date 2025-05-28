@@ -2,7 +2,7 @@
 
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
-import NextButton from "@/components/NextButton";
+import NextButton from "@/components/utils/NextButton";
 
 export default function Home(){
     const router = useRouter();
