@@ -1,6 +1,6 @@
-import HeroTypeCard from "@/components/HeroType/HeroTypeCard";
-import PagesHeader from "@/components/utils/PagesHeader";
-import BattleSection from "@/components/BattleSection";
+import HeroTypeCard from "../../../../components/HeroType/HeroTypeCard";
+import PagesHeader from "../../../../components/utils/PagesHeader";
+import BattleSection from "../../../../components/BattleSection";
 import styles from "./page.module.css"
 
 

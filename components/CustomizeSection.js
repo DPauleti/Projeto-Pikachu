@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import StatsCustomize from './StatsCustomize';
-import styles from './CustomizeSection.module.css'
-import NextButton from './utils/NextButton';
+import styles from './CustomizeSection.module.css';
 
 const STEP = 10;
 const MAX_PER_STAT = 100;
@@ -46,10 +45,6 @@ export default function CustomizeSection({ initialStats, maxTotal }) {
             onDecrease={() => changeStat(stat, -STEP)}
           />
         ))}
-      </section>
-
-      <section className={styles.nextBtnCustomize}>
-        <NextButton /* onClick={handleNext} *//>
       </section>
     </section>
   );
