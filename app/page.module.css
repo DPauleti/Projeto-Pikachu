@@ -52,3 +52,17 @@
   width: 60%;
   }
 }
+
+@media (max-width: 450px) {
+  .box {
+    width: 80%;
+  }
+
+  .homeTitle {
+    font-size: 0.65rem;
+  }
+
+  .form input {
+    width: 16rem;
+  }
+}
