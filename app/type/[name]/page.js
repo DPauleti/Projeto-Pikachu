@@ -19,7 +19,7 @@ export default function Type({params}) {
     {
       key: 'speedster',
       name: 'Speedster',
-      description: 'Fast and agile, masters of movement.',
+      description: 'Fast and agile, striking before foes can react.',
       image: '/raio.png'
     },
     {
