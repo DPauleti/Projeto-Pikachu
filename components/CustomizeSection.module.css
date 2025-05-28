@@ -3,10 +3,11 @@
   flex-direction: column;
   justify-content: center;
   width: 20vw;
+  text-align: center;
 }
 
 .nextBtnCustomize {
-  margin-top: 20px;
+  margin-top: 28px;
   display: flex;
   justify-content: center;
 }

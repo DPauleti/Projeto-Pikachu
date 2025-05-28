@@ -1,0 +1,11 @@
+.statBarContainer {
+  width: 4rem;
+  background-color: #140B16;
+  border: 1px solid #260659;
+}
+
+.statBar {
+  height: 12px;
+  background-color: #6E7C87;
+  transition: width 0.3s;
+}

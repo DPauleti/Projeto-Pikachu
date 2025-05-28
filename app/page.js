@@ -20,7 +20,7 @@ export default function Home(){
                 <h1 className={`${styles.homeTitle}`}>WHAT IS YOUR HERO NAME?</h1>
                 <form className={`${styles.form}`} onSubmit={handleSubmit}>
                     <input type="text" name="name" placeholder="Name" required />
-                    <NextButton />
+                    <NextButton type="submit" />
                 </form>
             </section>
         </main>

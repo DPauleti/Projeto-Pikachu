@@ -50,7 +50,7 @@ export default function Type({params}) {
 
     return (    
         <main>
-            <PagesHeader title={name + "will be a..."}/>
+            <PagesHeader title={name + " will be a..."}/>
             <section className={`${styles.typeSection}`}>
               {isMobile ? (
                 <>

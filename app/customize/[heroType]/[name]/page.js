@@ -1,7 +1,7 @@
 'use client';
 import { use } from 'react';
 import HeroTypeCard from "@/components/HeroType/HeroTypeCard";
-import CustomizeStats from "@/components/CustomizeStats";
+import CustomizeSection from "@/components/CustomizeSection";
 import styles from "./page.module.css"
 import PagesHeader from '@/components/utils/PagesHeader';
 
@@ -48,7 +48,12 @@ export default function Customize({params}) {
             <PagesHeader title={"Customize " + name} />
             <section className={`${styles.customizeContent}`}>
                 <HeroTypeCard image={heroSelected} enableHover={false}  />
-                <CustomizeStats initialStats={initialStats} maxTotal={maxTotal}></CustomizeStats>
+                <CustomizeSection 
+                    initialStats={initialStats} 
+                    maxTotal={maxTotal} 
+                    heroType={heroType}
+                    name={name}
+                />
             </section>
         </main>
     )
