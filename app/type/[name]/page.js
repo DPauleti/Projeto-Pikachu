@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import HeroTypeCard from "@/components/HeroType/HeroTypeCard";
 import styles from './page.module.css'
+import PagesHeader from "@/components/utils/PagesHeader";
 
 
 export default function Type({params}) {
