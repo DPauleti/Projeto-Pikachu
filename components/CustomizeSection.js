@@ -4,14 +4,12 @@ import { useState } from 'react';
 import StatsCustomize from './StatsCustomize';
 import styles from './CustomizeSection.module.css'
 import NextButton from './utils/NextButton';
-import { useRouter } from 'next/navigation';
 
 const STEP = 10;
 const MAX_PER_STAT = 100;
 const MIN_PER_STAT = 0;
 
-export default function CustomizeSection({ initialStats, maxTotal, heroType, name }) {
-  const router = useRouter();
+export default function CustomizeSection({ initialStats, maxTotal }) {
 
   const [stats, setStats] = useState(initialStats);
   const total = Object.values(stats).reduce((sum, val) => sum + val, 0);
@@ -27,16 +25,12 @@ export default function CustomizeSection({ initialStats, maxTotal, heroType, nam
         newTotal <= maxTotal &&
         newTotal >= 0
       ) {
-        return { ...prev, [key]: newValue }; // altera somente o valor da key
+        return { ...prev, [key]: newValue };
       }
 
       return prev;
     });
   };
-
-    const handleNext = () => {
-      router.push(`/battle/${heroType}/${name}`);
-    };
 
   return (
     <section className={styles.customizeStatsContainer}>
@@ -55,7 +49,7 @@ export default function CustomizeSection({ initialStats, maxTotal, heroType, nam
       </section>
 
       <section className={styles.nextBtnCustomize}>
-        <NextButton onClick={handleNext}/>
+        <NextButton /* onClick={handleNext} *//>
       </section>
     </section>
   );
