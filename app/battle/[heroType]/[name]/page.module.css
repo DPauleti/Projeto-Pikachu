@@ -7,4 +7,12 @@
 .herosSpace {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroImage {
+  max-height: 400px;
+  max-width: 400px;
+  object-fit: cover;
 }

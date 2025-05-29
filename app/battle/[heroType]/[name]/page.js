@@ -2,9 +2,10 @@ import HeroTypeCard from "../../../../components/HeroType/HeroTypeCard";
 import PagesHeader from "../../../../components/utils/PagesHeader";
 import BattleSection from "../../../../components/BattleSection";
 import styles from "./page.module.css"
+import StatsCustomize from "../../../../components/StatsCustomize";
 
 
-export default function Battle( {name, apiName, heroType} ) {
+export default async function Battle( {name, apiName, heroType} ) {
   
   const speedsterImage = '/raio.png'
   const guardianImage = '/shield.png'
@@ -16,11 +17,15 @@ export default function Battle( {name, apiName, heroType} ) {
   const apiHeroID = Math.floor(Math.random() * 731) + 1; // Random hero ID between 1 and 731
   var apiHeroStats = {};
   var apiHeroName = "";
-  const apiHero = fetch(`${baseUrl}/${apiKey}/${apiHeroID}`)
+  var heroImage = "";
+  const apiHero = await fetch(`${baseUrl}/${apiKey}/${apiHeroID}`)
     .then(response => response.json())
     .then(data => {
       apiHeroStats = data.powerstats;
       apiHeroName = data.name;
+      heroImage = data.image.url;
+      console.log("API Hero Stats:", apiHeroStats);
+      console.log("API Hero Name:", apiHeroName);
     })
     .catch(error => {
       console.error("Error fetching hero data:", error);
@@ -28,33 +33,41 @@ export default function Battle( {name, apiName, heroType} ) {
 
   return (
     <main className={"battlePage"}>
-      <PagesHeader title={"BATTLE"} />
+      <PagesHeader title={"Random Hero!"} />
       <section className={styles.battleContent} >
         <section className={styles.herosSpace} >
-          <h3>{name}</h3>
-          <HeroTypeCard 
-            image={heroSelected}
-            enableHover={false}
-          />
+          <h3>{apiHeroName}</h3>
+          <img src={heroImage} alt={apiHeroName} className={styles.heroImage} />
         </section>
+        <section className={styles.herosSpace} >        
         <section>
-          {/* <BattleSection 
-            initialStats={}
-            maxTotal={}
-          /> */}
-        </section>
-        <section className={styles.herosSpace} >
-          <h3>{apiName}</h3>
-          
-          <BattleSection 
-            initialStats={apiHeroStats} 
-            maxTotal={800} 
-            heroType={"strategist"}
-            name={apiHeroName}
+          <StatsCustomize
+            name={"Intelligence"}
+            value={apiHeroStats["intelligence"]}
+          />
+          <StatsCustomize
+            name={"Strength"}
+            value={apiHeroStats["strength"]}              
+          />
+          <StatsCustomize
+            name={"Speed"}
+            value={apiHeroStats["speed"]}              
+          />
+          <StatsCustomize
+            name={"Durability"}
+            value={apiHeroStats["durability"]}              
+          />
+          <StatsCustomize
+            name={"Power"}
+            value={apiHeroStats["power"]}              
+          />
+          <StatsCustomize
+            name={"Combat"}
+            value={apiHeroStats["combat"]}        
           />
         </section>
       </section>
-      
+    </section>
     </main>
 
   )
